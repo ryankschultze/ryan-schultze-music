@@ -7,9 +7,10 @@
     <title>Ryan Schultze Music</title>
 
     @include('partials.styles')
+
 </head>
 <body class="text-white bg-green-900 font-serif">
-
+@routes
 @include('partials.header')
 
 <main class="container mt-5">
