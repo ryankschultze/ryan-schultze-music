@@ -3,23 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Ryan Schultze Music</title>
-
+    <title>ryan.dev</title>
     @include('partials.styles')
-
 </head>
 <body class="text-white bg-green-900 font-serif">
 @routes
-@include('partials.header')
+<div id="app">
+    @include('partials.header')
 
-<main class="container mt-5">
-    @yield('content')
-</main>
+    <main class="container mt-5">
+        @yield('content')
+    </main>
 
-@include('partials.footer')
-
-@include('partials.scripts')
-
+    @include('partials.footer')
+    @include('partials.scripts')
+</div>
+@vite('resources/js/app.js')
 </body>
 </html>
