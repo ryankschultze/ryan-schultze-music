@@ -9,8 +9,8 @@
 <body class="text-white bg-green-900 font-serif">
 @routes
 <div id="app">
-    @include('partials.header')
-
+{{--    @include('partials.header')--}}
+    @include('partials.sidebar')
     <main class="container mt-5">
         @yield('content')
     </main>
@@ -18,6 +18,7 @@
     @include('partials.footer')
     @include('partials.scripts')
 </div>
-@vite('resources/js/app.js')
+
 </body>
+@vite('resources/js/app.js')
 </html>

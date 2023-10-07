@@ -10,9 +10,10 @@ import { Ziggy } from './ziggy.js';
 import { ZiggyVue } from 'ziggy';
 
 //Importing our custom components
-import Welcome from "@/components/welcome.vue";
-import Navbar from "@/components/navbar.vue";
-import Sidebar from "@/components/sidebar.vue";
+import Welcome from "./components/welcome.vue";
+import Navbar from "./components/navbar.vue";
+import Sidebar from "./components/sidebar.vue";
+import Card from "./components/card.vue";
 
 //Creating router instance
 const router = createRouter({
@@ -30,6 +31,7 @@ const app = createApp({
 app.component('Welcome', Welcome);
 app.component('Navbar', Navbar);
 app.component('Sidebar', Sidebar);
+app.component('Card', Card)
 
 //We don't need this just yet because we are using web.php and api.php to handle requests
 // app.use(router);

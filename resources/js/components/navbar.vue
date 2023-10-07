@@ -1,32 +1,41 @@
 <template>
-<div class="fixed top-0 w-screen h-16 flex flex-col bg-gray-600">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('pages.index') }}">Ryan Schultze</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('pages.index') }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('pages.about') }}">About</a>
-                    </li>
-                </ul>
+    <div>
+        <!-- Navbar -->
+        <nav class="bg-blue-600 text-white p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="#" class="text-xl font-bold">Logo</a>
+
+                <div class="relative">
+                    <!-- Dropdown Toggle -->
+                    <button @click="toggleDropdown" class="focus:outline-none">
+                        Menu
+                        <span v-if="!dropdownOpen">▼</span>
+                        <span v-else>▲</span>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div v-if="dropdownOpen" class="absolute right-0 mt-2 w-48 bg-white text-black shadow-lg rounded border">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200">Item 1</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200">Item 2</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200">Item 3</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
-</div>
+        </nav>
+    </div>
 </template>
 
 <script>
 export default {
-    name: "Navbar"
+    data() {
+        return {
+            dropdownOpen: false
+        };
+    },
+    methods: {
+        toggleDropdown() {
+            this.dropdownOpen = !this.dropdownOpen;
+        }
+    }
 }
 </script>
-
-<style scoped>
-
-</style>
